@@ -10,10 +10,15 @@ function myButtonClicked() {
   let counter = 0
   let answer = 0
 
-  while (counter < secondNumber) {
-    answer += firstNumber
+  while (counter < Math.abs(secondNumber)) {
+    answer += Math.abs(firstNumber)
     counter++
   }
 
-  document.getElementById("answer").innerHTML = answer
+  if ((firstNumber < 0) && (secondNumber > 0) || (firstNumber > 0) && (secondNumber < 0)) {
+    answer = answer * -1
+  } 
+
+  document.getElementById("answer").innerHTML = firstNumber + " x " + secondNumber + " = " + answer
+
 } 
